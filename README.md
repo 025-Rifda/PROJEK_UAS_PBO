@@ -6,50 +6,50 @@ Berikut adalah struktur direktori proyek yang akan dibuat:
 
 ```plaintext
 src/main/java/com/example/belajar_spring/
-├── config/
-│   ├── LoginInterceptor.java
-│   └── WebConfig.java
-├── controller/
-│   ├── AuthController.java
-│   ├── KontakKeluargaController.java
-│   ├── KontakTemanController.java
-├── model/
-│   ├── Keluarga.java
-│   ├── Kerja.java
-│   ├── Kontak.java
-│   ├── Teman.java
-│   └── User.java
-├── service/
-│   ├── KeluargaService.java
-│   ├── KerjaService.java
-│   ├── KontakService.java
-│   ├── KontakTemanService.java
-│   └── UserService.java
-├── BelajarController.java
-└── BelajarSpringApplication.java
+    ├── config/
+    │   ├── LoginInterceptor.java
+    │   └── WebConfig.java
+    ├── controller/
+    │   ├── AuthController.java
+    │   ├── KontakKeluargaController.java
+    │   ├── KontakTemanController.java
+    ├── model/
+    │   ├── Keluarga.java
+    │   ├── Kerja.java
+    │   ├── Kontak.java
+    │   ├── Teman.java
+    │   └── User.java
+    ├── service/
+    │   ├── KeluargaService.java
+    │   ├── KerjaService.java
+    │   ├── KontakService.java
+    │   ├── KontakTemanService.java
+    │   └── UserService.java
+    ├── BelajarController.java
+    └── BelajarSpringApplication.java
 
 src/main/resources/
-├── static/
-├── templates/
-│   ├── Auth/
-│   │   └── login.html
-│   ├── register.html
-│   ├── fragments/
-│   │   ├── footer.html
-│   │   ├── header.html
-│   │   └── layout.html
-│   ├── kontak/
-│   │   ├── add.html
-│   │   ├── index.html
-│   │   ├── kontak_keluarga/
-│   │   │   ├── add.html
-│   │   │   └── index.html
-│   │   ├── kontak_kerja/
-│   │   │   ├── add.html
-│   │   │   └── index.html
-│   │   └── kontak_teman/
-│   │       ├── add.html
-│   │       └── index.html
-│   ├── dashboard.html
-│   └── welcome.html
+    ├── static/
+    ├── templates/
+    │   ├── Auth/
+    │   │   └── login.html
+    │   ├── register.html
+    │   ├── fragments/
+    │   │   ├── footer.html
+    │   │   ├── header.html
+    │   │   └── layout.html
+    │   ├── kontak/
+    │   │   ├── add.html
+    │   │   ├── index.html
+    │   │   ├── kontak_keluarga/
+    │   │   │   ├── add.html
+    │   │   │   └── index.html
+    │   │   ├── kontak_kerja/
+    │   │   │   ├── add.html
+    │   │   │   └── index.html
+    │   │   └── kontak_teman/
+    │   │       ├── add.html
+    │   │       └── index.html
+    │   ├── dashboard.html
+    │   └── welcome.html
 ```
