@@ -1,4 +1,6 @@
-##SearchController
+## SearchController
+
+```java
 package com.example.belajar_spring.controller;
 
 import java.util.List;
@@ -27,16 +29,8 @@ public class SearchController {
         }
 
         List<Kontak> hasil = kontakRepository.searchKontak(keyword);
-        System.out.println("=== Hasil Pencarian ===");
-        for (Kontak k : hasil) {
-            System.out.println(">> " + k.getNama());
-        }
-
         model.addAttribute("hasil", hasil);
-        model.addAttribute("keyword", keyword);
-        return "hasilpencarian";
-
+        return "hasil_search";
     }
-
 }
-
+```
