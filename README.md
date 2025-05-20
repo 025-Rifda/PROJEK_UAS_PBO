@@ -25,17 +25,23 @@ src/main/java/com/example/belajar_spring
     ├── repository
     │   └── KontakRepository.java
     ├── service
-    │   ├── BelajarController.java
     │   ├── KeluargaService.java
     │   ├── KerjaService.java
     │   ├── KontakService.java
     │   ├── KontakTemanService.java
     │   └── UserService.java
+    │   BelajarSpringApplication.java
     └── BelajarSpringApplication.java
 
 
 src/main/resources/
     ├── static/
+    │   ├── latardashboard.mp4
+    │   ├── latarhijau.mp4
+    │   ├── latarkeluarga.mp4
+    │   ├── latarlogin.mp4
+    │   ├── latarsoftpink.mp4
+    │   ├── latarungu.mp4
     ├── templates/
     │   ├── Auth/
     │   |   ├── login.html
@@ -57,6 +63,9 @@ src/main/resources/
     │   |   ├── add.html
     │   │   └── index.html
     │   ├── dashboard.html
+    │   ├── hasilpencarian.html
+    │   ├── pembuat.html
+    │   ├── search_result.html
     │   └── welcome.html
     └── application.properties
 ```
