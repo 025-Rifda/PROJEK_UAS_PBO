@@ -1,4 +1,4 @@
-## SearchController
+### SearchController
 
 ```java
 package com.example.belajar_spring.controller;
@@ -34,3 +34,4 @@ public class SearchController {
     }
 }
 ```
+
