@@ -95,9 +95,7 @@ public abstract class Kontak {
     }
 
 }
-
----
-
+```
 ## KontakService.java
 
 ```java
@@ -162,5 +160,89 @@ public class KontakService {
         kontakKeluargaList.removeIf(k -> k.getId().equals(id));
     }
 }
+```
 
+### KontakController.java
 
+```java
+package com.example.belajar_spring.controller;
+
+import com.example.belajar_spring.model.Kontak;
+import com.example.belajar_spring.service.KeluargaService;
+import com.example.belajar_spring.service.KontakTemanService;
+import com.example.belajar_spring.service.KerjaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Controller
+@RequestMapping("/kontak")
+public class KontakController {
+
+    @Autowired
+    private KeluargaService keluargaService;
+
+    @Autowired
+    private KontakTemanService kontakTemanService;
+
+    @Autowired
+    private KerjaService kerjaService;
+
+    @GetMapping
+    public String tampilkanKontakUmum(
+            @RequestParam(required = false) String sumber,
+            @RequestParam(required = false) String keyword,
+            Model model) {
+
+        List<Kontak> semuaKontak = new ArrayList<>();
+
+        List<Kontak> dariKeluarga = keluargaService.getAll();
+        dariKeluarga.forEach(k -> k.setSumber("Keluarga"));
+
+        List<Kontak> dariTeman = kontakTemanService.getAll();
+        dariTeman.forEach(k -> k.setSumber("Teman"));
+
+        List<Kontak> dariKerja = kerjaService.getAll();
+        dariKerja.forEach(k -> k.setSumber("Kerja"));
+
+        semuaKontak.addAll(dariKeluarga);
+        semuaKontak.addAll(dariTeman);
+        semuaKontak.addAll(dariKerja);
+
+        // Filter berdasarkan sumber jika ada
+        if (sumber != null && !sumber.isBlank()) {
+            semuaKontak = semuaKontak.stream()
+                    .filter(k -> k.getSumber().equalsIgnoreCase(sumber))
+                    .collect(Collectors.toList());
+        }
+
+        // Filter berdasarkan keyword jika ada
+        if (keyword != null && !keyword.isBlank()) {
+            String kwLower = keyword.toLowerCase();
+            semuaKontak = semuaKontak.stream()
+                    .filter(k -> k.getNama().toLowerCase().contains(kwLower) ||
+                            (k.getNoTelp() != null && k.getNoTelp().contains(keyword)) ||
+                            (k.getEmail() != null && k.getEmail().toLowerCase().contains(kwLower)))
+                    .collect(Collectors.toList());
+        }
+
+        // Masukkan ke model
+        model.addAttribute("total", dariKeluarga.size() + dariTeman.size() + dariKerja.size());
+        model.addAttribute("keluargaCount", dariKeluarga.size());
+        model.addAttribute("temanCount", dariTeman.size());
+        model.addAttribute("kerjaCount", dariKerja.size());
+        model.addAttribute("kontakList", semuaKontak);
+        model.addAttribute("keyword", keyword != null ? keyword : "");
+        model.addAttribute("sumber", sumber != null ? sumber : "");
+
+        return "hasilpencarian";
+    }
+}
+```
