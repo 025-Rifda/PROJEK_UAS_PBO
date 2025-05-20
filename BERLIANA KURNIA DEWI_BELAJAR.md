@@ -1,4 +1,4 @@
-**Kontak Repository**
+**Kontak Repository.java**
 
 ```java
 
@@ -24,7 +24,6 @@ public interface KontakRepository extends JpaRepository<Kontak, Long> {
 }
 
 
-**Belajar Controller**
+**Belajar Controller.java** 
 
 
-```java
