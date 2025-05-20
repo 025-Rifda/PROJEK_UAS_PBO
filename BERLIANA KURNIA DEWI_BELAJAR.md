@@ -1,6 +1,7 @@
 **Kontak Repository**
 
  ```java
+
 package com.example.belajar_spring.repository;
 
 import com.example.belajar_spring.model.Kontak;
@@ -21,4 +22,6 @@ public interface KontakRepository extends JpaRepository<Kontak, Long> {
     List<Kontak> searchKontak(@Param("keyword") String keyword);
 
 }
+
+
 
