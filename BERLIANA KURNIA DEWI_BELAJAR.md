@@ -24,4 +24,7 @@ public interface KontakRepository extends JpaRepository<Kontak, Long> {
 }
 
 
+** Belajar Controller **
 
+
+```java
