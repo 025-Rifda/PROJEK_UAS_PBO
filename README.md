@@ -11,7 +11,9 @@ src/main/java/com/example/belajar_spring/
     │   └── WebConfig.java
     ├── controller/
     │   ├── AuthController.java
+    |   ├── KontakController.java
     │   ├── KontakKeluargaController.java
+    |   ├── KontakKerjaController.java
     │   ├── KontakTemanController.java
     ├── model/
     │   ├── Keluarga.java
@@ -32,8 +34,8 @@ src/main/resources/
     ├── static/
     ├── templates/
     │   ├── Auth/
-    │   │   └── login.html
-    │   ├── register.html
+    │   |   ├── login.html
+    │   |   └──register.html
     │   ├── fragments/
     │   │   ├── footer.html
     │   │   ├── header.html
@@ -41,15 +43,16 @@ src/main/resources/
     │   ├── kontak/
     │   │   ├── add.html
     │   │   ├── index.html
-    │   │   ├── kontak_keluarga/
-    │   │   │   ├── add.html
-    │   │   │   └── index.html
-    │   │   ├── kontak_kerja/
-    │   │   │   ├── add.html
-    │   │   │   └── index.html
-    │   │   └── kontak_teman/
-    │   │       ├── add.html
-    │   │       └── index.html
+    │   ├── kontak_keluarga/
+    │   │   ├── add.html
+    │   │   └── index.html
+    │   ├── kontak_kerja/
+    │   │   ├── add.html
+    │   │   └── index.html
+    │   └── kontak_teman/
+    │   |   ├── add.html
+    │   │   └── index.html
     │   ├── dashboard.html
     │   └── welcome.html
+    └── application.properties
 ```
