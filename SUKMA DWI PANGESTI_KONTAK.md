@@ -96,7 +96,8 @@ public abstract class Kontak {
 
 }
 ```
-## KontakService.java
+
+# KontakService.java
 
 ```java
 package com.example.belajar_spring.service;
@@ -162,7 +163,7 @@ public class KontakService {
 }
 ```
 
-### KontakController.java
+# KontakController.java
 
 ```java
 package com.example.belajar_spring.controller;
