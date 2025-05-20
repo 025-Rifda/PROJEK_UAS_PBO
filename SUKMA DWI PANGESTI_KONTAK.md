@@ -96,6 +96,8 @@ public abstract class Kontak {
 
 }
 
+---
+
 ## KontakService.java
 
 ```java
