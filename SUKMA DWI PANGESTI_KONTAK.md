@@ -96,5 +96,69 @@ public abstract class Kontak {
 
 }
 
-** KontakService.java**
+## KontakService.java
+
+```java
+package com.example.belajar_spring.service;
+
+import com.example.belajar_spring.model.Keluarga;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class KontakService {
+    private final List<Keluarga> kontakKeluargaList = new ArrayList<>();
+    private Long idCounter = 1L;
+
+    public List<Keluarga> getAllKontak() {
+        return kontakKeluargaList;
+    }
+
+    public List<Keluarga> getAllKontakSortedByName() {
+        return kontakKeluargaList.stream()
+                .sorted(Comparator.comparing(Keluarga::getNama, String.CASE_INSENSITIVE_ORDER))
+                .collect(Collectors.toList());
+    }
+
+    public List<Keluarga> searchKontak(String keyword) {
+        String lowerKeyword = keyword.toLowerCase();
+        return kontakKeluargaList.stream()
+                .filter(k -> k.getNama().toLowerCase().contains(lowerKeyword) ||
+                        k.getNoTelp().toLowerCase().contains(lowerKeyword))
+                .collect(Collectors.toList());
+    }
+
+    public Keluarga saveKontak(Keluarga kontak) {
+        if (kontak.getId() == null) {
+            kontak.setId(idCounter++);
+            kontakKeluargaList.add(kontak);
+        }
+        return kontak;
+    }
+
+    public Keluarga getKontakByID(Long id) {
+        return kontakKeluargaList.stream()
+                .filter(k -> k.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void updateKontak(Keluarga kontak) {
+        for (int i = 0; i < kontakKeluargaList.size(); i++) {
+            if (kontakKeluargaList.get(i).getId().equals(kontak.getId())) {
+                kontakKeluargaList.set(i, kontak);
+                return;
+            }
+        }
+    }
+
+    public void deleteKontak(Long id) {
+        kontakKeluargaList.removeIf(k -> k.getId().equals(id));
+    }
+}
+
 
