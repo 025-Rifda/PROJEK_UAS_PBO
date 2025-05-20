@@ -35,3 +35,65 @@ public class SearchController {
 }
 ```
 
+### Usermodel
+
+```java
+package com.example.belajar_spring.model;
+
+public class User {
+    private String username;
+    private String password;
+
+    public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
+```
+
+###UserService
+
+```java
+package com.example.belajar_spring.service;
+
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Service
+public class UserService {
+    private final Map<String, String> users = new HashMap<>();
+
+    public boolean register(String username, String password) {
+        if (users.containsKey(username)) {
+            return false; // Username already exists
+        }
+        users.put(username, password);
+        return true;
+    }
+
+    public boolean login(String username, String password) {
+        return users.containsKey(username) && users.get(username).equals(password);
+    }
+}
+```
