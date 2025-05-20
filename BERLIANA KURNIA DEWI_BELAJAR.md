@@ -24,7 +24,7 @@ public interface KontakRepository extends JpaRepository<Kontak, Long> {
 }
 
 
-**Belajar Controller**
+**Belajar Controller.java**
 
 package com.example.belajar_spring;
 
@@ -66,4 +66,20 @@ public class BelajarController {
         model.addAttribute("totalKerja", kerjaService.getAllKontakSortedAsc().size());
         return "dashboard";
     }
+}
+
+**Belajar Spring Application.java**
+
+package com.example.belajar_spring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BelajarSpringApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BelajarSpringApplication.class, args);
+	}
+
 }
