@@ -5,30 +5,34 @@ Projek CONNEXT untuk Ujian Akhir Semester Pemograman Berorientasi Objek
 Berikut adalah struktur direktori proyek yang akan dibuat:
 
 ```plaintext
-src/main/java/com/example/belajar_spring/
-    ├── config/
+src/main/java/com/example/belajar_spring
+    ├── config
     │   ├── LoginInterceptor.java
     │   └── WebConfig.java
-    ├── controller/
+    ├── controller
     │   ├── AuthController.java
-    |   ├── KontakController.java
+    │   ├── KontakController.java
     │   ├── KontakKeluargaController.java
-    |   ├── KontakKerjaController.java
+    │   ├── KontakKerjaController.java
     │   ├── KontakTemanController.java
-    ├── model/
+    │   └── SearchController.java
+    ├── model
     │   ├── Keluarga.java
     │   ├── Kerja.java
     │   ├── Kontak.java
     │   ├── Teman.java
     │   └── User.java
-    ├── service/
+    ├── repository
+    │   └── KontakRepository.java
+    ├── service
+    │   ├── BelajarController.java
     │   ├── KeluargaService.java
     │   ├── KerjaService.java
     │   ├── KontakService.java
     │   ├── KontakTemanService.java
     │   └── UserService.java
-    ├── BelajarController.java
     └── BelajarSpringApplication.java
+
 
 src/main/resources/
     ├── static/
