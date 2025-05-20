@@ -1,4 +1,4 @@
-# model Kontak.java
+# ModelKontak.java
 
 ```java
 package com.example.belajar_spring.model;
