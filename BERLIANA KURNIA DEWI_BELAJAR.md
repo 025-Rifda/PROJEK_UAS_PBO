@@ -24,7 +24,7 @@ public interface KontakRepository extends JpaRepository<Kontak, Long> {
 }
 
 
-**Belajar Controller.java**
+**Belajar Controller**
 
 package com.example.belajar_spring;
 
