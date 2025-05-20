@@ -22,9 +22,11 @@ public interface KontakRepository extends JpaRepository<Kontak, Long> {
     List<Kontak> searchKontak(@Param("keyword") String keyword);
 
 }
-
+```
 
 # Belajar Controller.java
+
+```java
 
 package com.example.belajar_spring;
 
@@ -67,8 +69,11 @@ public class BelajarController {
         return "dashboard";
     }
 }
+```
 
 **Belajar Spring Application.java**
+
+```java
 
 package com.example.belajar_spring;
 
@@ -83,3 +88,4 @@ public class BelajarSpringApplication {
 	}
 
 }
+```
