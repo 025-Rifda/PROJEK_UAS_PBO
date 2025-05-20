@@ -73,7 +73,7 @@ public class KontakKerjaController {
 }
 
 ```
-**Keluarga.java(Model)**
+**Kerja.java(Model)**
 
 ```java
 package com.example.belajar_spring.model;
