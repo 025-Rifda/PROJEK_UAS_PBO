@@ -80,28 +80,39 @@ package com.example.belajar_spring.model;
 
 import java.time.LocalDate;
 
-public class Keluarga extends Kontak {
-    private String hubungan;
+public class Kerja extends Kontak {
+
+    private String label;
+    private String jabatan;
     private String sumber;
 
-    // Constructor lengkap, termasuk properti superclass
-    public Keluarga(String nama, String noTelp, String email, LocalDate tanggalDitambahkan, String jenisKontak,
-            String hubungan) {
+    // Constructor lengkap
+    public Kerja(String nama, String noTelp, String email, LocalDate tanggalDitambahkan, String jenisKontak,
+            String label, String jabatan) {
         super(nama, noTelp, email, tanggalDitambahkan, jenisKontak);
-        this.hubungan = hubungan;
+        this.label = label;
+        this.jabatan = jabatan;
     }
 
-    // Default constructor kosong untuk form binding Spring
-    public Keluarga() {
-        super(null, null, null, null, "Keluarga");
+    // Default constructor untuk Spring form binding
+    public Kerja() {
+        super(null, null, null, null, "Kerja");
     }
 
-    public String getHubungan() {
-        return hubungan;
+    public String getLabel() {
+        return label;
     }
 
-    public void setHubungan(String hubungan) {
-        this.hubungan = hubungan;
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getJabatan() {
+        return jabatan;
+    }
+
+    public void setJabatan(String jabatan) {
+        this.jabatan = jabatan;
     }
 
     public String getSumber() {
@@ -115,12 +126,12 @@ public class Keluarga extends Kontak {
 }
 
 ```
-**KeluargaService.java**
+**KerjaService.java**
 
 ```java
 package com.example.belajar_spring.service;
 
-import com.example.belajar_spring.model.Keluarga;
+import com.example.belajar_spring.model.Kerja;
 import com.example.belajar_spring.model.Kontak;
 
 import org.springframework.stereotype.Service;
@@ -132,57 +143,65 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class KeluargaService {
-
-    private final List<Keluarga> kontakList = new ArrayList<>();
+public class KerjaService {
+    private final List<Kerja> kontakList = new ArrayList<>();
     private Long idCounter = 1L;
 
-    // Constructor untuk dummy data
-    public KeluargaService() {
-        kontakList.add(new Keluarga("Fatur", "081234567890", "faturrcatur@mail.com",
-                LocalDate.now(), "Keluarga", "Ayah"));
-        kontakList.get(0).setId(idCounter++);
+    public KerjaService() {
+        // Data dummy contoh
+        Kerja k1 = new Kerja("Pak Andi", "081233344455", "andi@ptmajujaya.com",
+                LocalDate.now(), "Kerja", "PT Maju Jaya", "Manager");
+        k1.setId(idCounter++);
+        kontakList.add(k1);
 
-        kontakList.add(new Keluarga("Rina", "081234567891", "Raniina@gmail.com",
-                LocalDate.now(), "Keluarga", "Ibu"));
-        kontakList.get(1).setId(idCounter++);
+        Kerja k2 = new Kerja("Bu Sari", "081266677788", "sari@cvsukses.com",
+                LocalDate.now(), "Kerja", "CV Sukses Selalu", "Staff");
+        k2.setId(idCounter++);
+        kontakList.add(k2);
 
-        kontakList.add(new Keluarga("Aira Aisyah", "081234567892", "Aisyhhh@mail.com",
-                LocalDate.now(), "Keluarga", "Kakak"));
-        kontakList.get(2).setId(idCounter++);
+        Kerja k3 = new Kerja("Budi", "082233445566", "budi@kantor.com",
+                LocalDate.now(), "Kerja", "CV Sukses Selalu", "Staff");
+        k3.setId(idCounter++);
+        kontakList.add(k3);
 
-        kontakList.add(new Keluarga("Bintang Arga", "083128909822", "Bintangdilangit@mail.com",
-                LocalDate.now(), "Keluarga", "Abang"));
-        kontakList.get(3).setId(idCounter++);
+        Kerja k4 = new Kerja("Zahra", "082299098745", "Zahraaini@kantor.com",
+                LocalDate.now(), "Kerja", "Kantor Pusat", "Manajer");
+        k4.setId(idCounter++);
+        kontakList.add(k4);
 
-        kontakList.add(new Keluarga("Caca", "088267667729", "adikCaca@mail.com",
-                LocalDate.now(), "Keluarga", "Adik"));
-        kontakList.get(4).setId(idCounter++);
+        Kerja k5 = new Kerja("Ziva Rania", "088756453245", "Zivarania@kantor.com",
+                LocalDate.now(), "Kerja", "Kantor Pusat", "Designer");
+        k5.setId(idCounter++);
+        kontakList.add(k5);
 
-        kontakList.add(new Keluarga("Rasya", "088765542900", "Rasyararas@mail.com",
-                LocalDate.now(), "Keluarga", "Sepupu"));
-        kontakList.get(5).setId(idCounter++);
+        Kerja k6 = new Kerja("Rayan Michael", "088546891234", "Rayannayy@ptmajujaya.com",
+                LocalDate.now(), "Kerja", "PT. Maju Jaya", "IT Manager");
+        k6.setId(idCounter++);
+        kontakList.add(k6);
+
+        Kerja k7 = new Kerja("Erick John", "083345678945", "Erichjohn@ptmajujaya.com",
+                LocalDate.now(), "Kerja", "PT. Maju Jaya", "Supervisor");
+        k7.setId(idCounter++);
+        kontakList.add(k7);
+
     }
 
     public List<Kontak> getAll() {
-        return new ArrayList<>(kontakList);
+        return new ArrayList<>(kontakList); //
     }
 
-    // Opsional: untuk sorting A-Z
-    public List<Keluarga> getAllKontakSortedAsc() {
-        return kontakList.stream()
-                .sorted(Comparator.comparing(Keluarga::getNama, String.CASE_INSENSITIVE_ORDER))
+    public List<Kerja> getAllKontakSortedAsc() {
+        return kontakList.stream().sorted(Comparator.comparing(Kerja::getNama, String.CASE_INSENSITIVE_ORDER))
                 .collect(Collectors.toList());
     }
 
-    // Opsional: untuk sorting Z-A
-    public List<Keluarga> getAllKontakSortedDesc() {
+    public List<Kerja> getAllKontakSortedDesc() {
         return kontakList.stream()
-                .sorted(Comparator.comparing(Keluarga::getNama, String.CASE_INSENSITIVE_ORDER).reversed())
+                .sorted(Comparator.comparing(Kerja::getNama, String.CASE_INSENSITIVE_ORDER).reversed())
                 .collect(Collectors.toList());
     }
 
-    public Keluarga saveKontak(Keluarga kontak) {
+    public Kerja saveKontak(Kerja kontak) {
         if (kontak.getId() == null) {
             kontak.setId(idCounter++);
             kontakList.add(kontak);
@@ -190,14 +209,11 @@ public class KeluargaService {
         return kontak;
     }
 
-    public Keluarga getKontakByID(Long id) {
-        return kontakList.stream()
-                .filter(k -> k.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+    public Kerja getKontakByID(Long id) {
+        return kontakList.stream().filter(k -> k.getId().equals(id)).findFirst().orElse(null);
     }
 
-    public void updateKontak(Keluarga kontak) {
+    public void updateKontak(Kerja kontak) {
         for (int i = 0; i < kontakList.size(); i++) {
             if (kontakList.get(i).getId().equals(kontak.getId())) {
                 kontakList.set(i, kontak);
@@ -210,6 +226,7 @@ public class KeluargaService {
         kontakList.removeIf(k -> k.getId().equals(id));
     }
 }
+
 ```
 
 
