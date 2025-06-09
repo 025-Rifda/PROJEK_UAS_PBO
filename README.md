@@ -1,6 +1,9 @@
 # PROJEK_UAS_PBO
 Projek CONNEXT untuk Ujian Akhir Semester Pemograman Berorientasi Objek
 
+# CONNEXT-WEB
+Connext adalah aplikasi pintar untuk mengelola kontak telepon dengan lebih rapi, cepat, dan efisien. Dengan antarmuka yang sederhana dan fitur pencarian canggih, Connext membantu pengguna menyimpan, mengatur, menyortir, dan mencari kontak dengan mudah. Cocok untuk kebutuhan personal maupun profesional, Connext memastikan setiap koneksi tetap dalam jangkauan.
+
 # Struktur Direktori
 Berikut adalah struktur direktori proyek yang akan dibuat:
 
@@ -68,6 +71,8 @@ src/main/resources/
     │   ├── search_result.html
     │   └── welcome.html
     └── application.properties
+
+
 ```
 
 
