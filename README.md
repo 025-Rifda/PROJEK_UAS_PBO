@@ -76,6 +76,7 @@ src/main/resources/
 ```
 
 # Nabila Pasha Hamidah_24111814060
+# Dea Suci Ramadani_24111814128
 
 
 
