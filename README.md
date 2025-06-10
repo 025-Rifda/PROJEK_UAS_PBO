@@ -45,6 +45,7 @@ src/main/resources/
     │   ├── latarlogin.mp4
     │   ├── latarsoftpink.mp4
     │   ├── latarungu.mp4
+    | [untuk latar belakang bisa di download di gdrive berikut : https://drive.google.com/drive/folders/1twf30rcErvyrywlctWaJj8Qlb0CF8LkE ]
     ├── templates/
     │   ├── Auth/
     │   |   ├── login.html
@@ -77,6 +78,7 @@ src/main/resources/
 
 # Nabila Pasha Hamidah_24111814060
 # Dea Suci Ramadani_24111814128
+# Almas Rifda Zatadin_24111814025
 
 
 
