@@ -79,6 +79,7 @@ src/main/resources/
 # Nabila Pasha Hamidah_24111814060
 # Dea Suci Ramadani_24111814128
 # Almas Rifda Zatadin_24111814025
+# Berliana Kurnia Dewi_24111814100
 
 
 
