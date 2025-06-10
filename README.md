@@ -81,6 +81,8 @@ src/main/resources/
 # Almas Rifda Zatadin_24111814025
 # Berliana Kurnia Dewi_24111814100
 # Sukma Dwi Pangesti_24111814120
+# Farras Fadhilah Nur Arrasi_24111814089
+
 
 
 
