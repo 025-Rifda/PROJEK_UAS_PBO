@@ -80,6 +80,7 @@ src/main/resources/
 # Dea Suci Ramadani_24111814128
 # Almas Rifda Zatadin_24111814025
 # Berliana Kurnia Dewi_24111814100
+# Sukma Dwi Pangesti_24111814120
 
 
 
