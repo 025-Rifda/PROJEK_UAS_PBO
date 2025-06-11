@@ -82,6 +82,7 @@ src/main/resources/
 # Berliana Kurnia Dewi_24111814100
 # Sukma Dwi Pangesti_24111814120
 # Farras Fadhilah Nur Arrasi_24111814089
+# Mirza Azmina_24111814058
 
 
 
