@@ -67,10 +67,6 @@ src/main/resources/
     │   |   ├── add.html
     │   │   └── index.html
     │   ├── dashboard.html
-    │   ├── hasilpencarian.html
-    │   ├── pembuat.html
-    │   ├── search_result.html
-    │   └── welcome.html
     └── application.properties
 
 
